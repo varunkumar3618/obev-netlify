@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Oxford Book of English Verse</title>
+        <title>The Oxford Book of English Verse</title>
       </Head>
 
       <main>
-        <Header title="Oxford Book of English Verse" />
+        <Header title="The Oxford Book of English Verse, 1250 - 1900" />
       </main>
 
     </div>
