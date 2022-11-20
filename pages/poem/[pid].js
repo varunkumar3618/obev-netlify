@@ -11,7 +11,7 @@ const Post = ({title, poemStanzas}) => {
     // const title = getTitleByPid(pid)
     // const title = "This is the title."
     return (
-      <div class="m-8" className='container'>
+      <div className='m-8 container'>
         <Head>
           <title>{title}</title>
         </Head>
