@@ -4,13 +4,12 @@ import {incrementPid, decrementPid} from 'lib/utils'
 import Head from 'next/head'
 import Header from '@components/Header'
 import Poem from '@components/Poem'
+import PoemLinks from '@components/PoemLinks'
 
 const Post = ({title, poemStanzas, prevPid, nextPid}) => {
     const router = useRouter()
     const { pid } = router.query
 
-    // const title = getTitleByPid(pid)
-    // const title = "This is the title."
     return (
       <div className='m-8 container'>
         <Head>
@@ -20,6 +19,7 @@ const Post = ({title, poemStanzas, prevPid, nextPid}) => {
         <main>
           <Header title={title} />
           <Poem poemStanzas={poemStanzas} />
+          <PoemLinks prevPid={prevPid} nextPid={nextPid}/>
         </main>
       </div>
     )
