@@ -15,6 +15,10 @@ const pidToTitle = Object.fromEntries(pidTitleRecords.map(
     record=>[record["pid"], record["title"]]
 ))
 
+export function getNumPoems() {
+    return pidTitleRecords.length
+}
+
 export function getTitleByPid(pid: string) {
     return pidToTitle[pid]
 }

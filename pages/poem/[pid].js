@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router'
-import { getTitleByPid, getPoemStanzasByPid, getAllPids } from 'lib/api'
+import { getTitleByPid, getPoemStanzasByPid, getAllPids, getNumPoems } from 'lib/api'
+import {incrementPid, decrementPid} from 'lib/utils'
 import Head from 'next/head'
 import Header from '@components/Header'
 import Poem from '@components/Poem'
 
-const Post = ({title, poemStanzas}) => {
+const Post = ({title, poemStanzas, prevPid, nextPid}) => {
     const router = useRouter()
     const { pid } = router.query
 
@@ -29,7 +30,9 @@ const Post = ({title, poemStanzas}) => {
   export async function getStaticProps({params}) {
     return {props: {
       title: getTitleByPid(params["pid"]),
-      poemStanzas: await getPoemStanzasByPid(params["pid"])
+      poemStanzas: await getPoemStanzasByPid(params["pid"]),
+      prevPid: decrementPid(params["pid"]),
+      nextPid: incrementPid(params["pid"], getNumPoems())
     }}
   }
 
