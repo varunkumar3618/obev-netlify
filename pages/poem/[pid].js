@@ -11,7 +11,7 @@ const Post = ({title, poemStanzas, prevPid, nextPid}) => {
     const { pid } = router.query
 
     return (
-      <div className='m-8 container'>
+      <div className='container flex justify-center'>
         <Head>
           <title>{title}</title>
         </Head>
